@@ -1,4 +1,4 @@
-package Aplicacao;
+package AlgorimosUmPoucoMaisComplexos;
 
 import java.util.Scanner;
 import Entidades.ContaCorrente;
@@ -6,7 +6,7 @@ import Entidades.ContaEmpresa;
 import Entidades.ContaEspecial;
 import Entidades.ContaPoupanca;
 
-public class CadContasCompleto {
+public class contasBancarias {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 
@@ -42,27 +42,27 @@ public class CadContasCompleto {
 				for (int x = 0; x < 5; x++) {
 					System.out.printf("\nSALDO: R$ %.2f", pp1.getSaldo(), "\n");
 					System.out.print("\n\nINSIRA A " + (x + 1) + "º MOVIMENTAÇÃO ");
-					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR ?");
+					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR? ");
 					opcao = leia.next().toUpperCase().charAt(0);
 
 					if (opcao == 'C') {
-						System.out.print("\nQUAL O VALOR PARA CRÉDITO ?");
+						System.out.print("\nQUAL O VALOR PARA CRÉDITO ? ");
 						valor = leia.nextDouble();
 						pp1.creditar(valor);
 					}
 
 					if (opcao == 'D') {
 						if (pp1.getSaldo() <= 0) {
-							System.out.println("\nCONTA SEM SALDO");
+							System.out.println("\nCONTA SEM SALDO ");
 							x--;
 
 						} else {
-							System.out.println("\nQUAL O VALOR PARA DÉBITO ?");
+							System.out.println("\nQUAL O VALOR PARA DÉBITO ? ");
 							valor = leia.nextDouble();
 
 							while (valor > pp1.getSaldo()) {
-								System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE");
-								System.out.println("\nQUAL O VALOR PARA DÉBITO ?");
+								System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE ");
+								System.out.println("\nQUAL O VALOR PARA DÉBITO ? ");
 								valor = leia.nextDouble();
 							}
 							pp1.debitar(valor);
@@ -89,7 +89,7 @@ public class CadContasCompleto {
 				emitir = leia.next().toUpperCase().charAt(0);
 
 				if (emitir == 'S') {
-					System.out.println("\nDESEJA QUANTOS TALOES ?");
+					System.out.println("\nDESEJA QUANTOS TALOES? ");
 					dataAniversario = leia.nextInt();
 					cc1.emitirTalao(dataAniversario);
 					for (int x = 0; x < dataAniversario; x++) {
@@ -101,26 +101,26 @@ public class CadContasCompleto {
 
 					System.out.printf("\nSALDO R$ %.2f", cc1.getSaldo(), "\n");
 					System.out.print("\n\nINSIRA A " + (x + 1) + "º MOVIMENTAÇÃO \n");
-					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR ?");
+					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR? ");
 					opcao = leia.next().toUpperCase().charAt(0);
 
 					if (opcao == 'C') {
-						System.out.println("\nQUAL O VALOR PARA CRÉDITO ?");
+						System.out.println("\nQUAL O VALOR PARA CRÉDITO ? ");
 						valor = leia.nextDouble();
 						cc1.creditar(valor);
 					}
 
 					if (opcao == 'D') {
 						if (cc1.getSaldo() <= 0) {
-							System.out.println("\nCONTA SEM SALDO");
+							System.out.println("\nCONTA SEM SALDO ");
 							x--;
 						} else {
-							System.out.println("\nQUAL O VALOR PARA DÉBITO ?");
-							valor = leia.nextDouble();
+							System.out.println("\nQUAL O VALOR PARA DÉBITO ? ");
+							valor = leia.nextDouble(); 
 
 							while (valor > cc1.getSaldo()) {
-								System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE");
-								System.out.println("\nQUAL O VALOR PARA DÉBITO ?");
+								System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE ");
+								System.out.println("\nQUAL O VALOR PARA DÉBITO? ");
 								valor = leia.nextDouble();
 							}
 							cc1.debitar(valor);
@@ -146,7 +146,7 @@ public class CadContasCompleto {
 				for (int x = 0; x < 5; x++) {
 					System.out.printf("\nSALDO R$ %.2f", ce1.getSaldo(), "\n");
 					System.out.printf("\nSALDO DO LIMITE R$ %.2f", ce1.getLimite());
-					System.out.print("\n\nINSIRA A " + (x + 1) + "º MOVIMENTAÇÃO \n");
+					System.out.print("\n\nINSIRA A " + (x + 1) + "º MOVIMENTAÇÃO \n ");
 					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR ?");
 					opcao = leia.next().toUpperCase().charAt(0);
 
@@ -179,8 +179,8 @@ public class CadContasCompleto {
 							}
 
 							if (liberaLimite == 'N') {
-								System.out.print("\n\nSALDO INSUFICIENTE\n");
-								System.out.print("\nREPITA A TRANSAÇÃO\n\n");
+								System.out.print("\n\nSALDO INSUFICIENTE\n ");
+								System.out.print("\nREPITA A TRANSAÇÃO\n\n ");
 								x--;
 							}
 
@@ -189,7 +189,7 @@ public class CadContasCompleto {
 						else if ((saldoLimite - valor) < 0)
 
 						{
-							System.out.print("\nSALDO INSUFICIENTE\n");
+							System.out.print("\nSALDO INSUFICIENTE\n ");
 							x--;
 						}
 
@@ -202,108 +202,79 @@ public class CadContasCompleto {
 
 				System.out.printf("\nSALDO DA CONTA: R$ %.2f", ce1.getSaldo());
 				System.out.printf("\nSALDO DO LIMITE R$ %.2f", ce1.getLimite());
-				System.out.println("\nTRANSAÇÃO FINALIZADA\n");
+				System.out.println("\nTRANSAÇÃO FINALIZADA\n ");
 			}
 
 			if (tipoConta == 4) {
-				ContaEmpresa cem1 = new ContaEmpresa (numero, cpf,10000.0);
+				ContaEmpresa cem1 = new ContaEmpresa(numero, cpf, 10000.0);
 				char deseja;
 				double valorEmp;
 				System.out.print("\n________CONTA EMPRESARIAL_______");
-				System.out.print("\nNUMERO DA CONTA: "+cem1.getNumero());
-				System.out.printf("\nSALDO DA CONTA: R$ %.2f",cem1.getSaldo());
-				System.out.print("\nCNPJ: "+cem1.getCpf_cnpj());
-				System.out.printf("\nPARABÉNS, SUA EMPRESA TEM UM LIMITE PRÉ-APROVADO DE R$ %.2f PARA EMPRESTIMO !\n",cem1.getEmprestimo());
-				System.out.print("\nDESEJA REALIZAR UM EMPRESTIMO ? S/N");
+				System.out.print("\nNUMERO DA CONTA: " + cem1.getNumero());
+				System.out.printf("\nSALDO DA CONTA: R$ %.2f", cem1.getSaldo());
+				System.out.print("\nCNPJ: " + cem1.getCpf_cnpj());
+				System.out.printf("\nPARABÉNS, SUA EMPRESA TEM UM LIMITE PRÉ-APROVADO DE R$ %.2f PARA EMPRESTIMO !\n ",
+						cem1.getEmprestimo());
+				System.out.print("\nDESEJA REALIZAR UM EMPRESTIMO ? S/N ");
 				deseja = leia.next().toUpperCase().charAt(0);
-				
-				if (deseja == 'S')
-				{
+
+				if (deseja == 'S') {
 					System.out.print("\nQUAL VALOR ? R$ ");
 					valorEmp = leia.nextDouble();
 					cem1.pedirEmprestimo(valorEmp);
-					System.out.printf("\nSALDO DA CONTA: R$ %.2f",cem1.getSaldo());										
+					System.out.printf("\nSALDO DA CONTA: R$ %.2f", cem1.getSaldo());
 				}
-				
-				else
-				{
+
+				else {
 					System.out.println("\nOK, OBRIGADO !!");
 				}
-				
-			
-				for (int x = 0; x<5; x++)
-				{
-					System.out.printf("\nSALDO: R$ %.2f",cem1.getSaldo(),"\n");
-					System.out.print("\nINSIRA A "+(x+1)+"º MOVIMENTAÇÃO \n");
-					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR ?");
+
+				for (int x = 0; x < 5; x++) {
+					System.out.printf("\nSALDO: R$ %.2f", cem1.getSaldo(), "\n ");
+					System.out.print("\nINSIRA A " + (x + 1) + "º MOVIMENTAÇÃO \n ");
+					System.out.print("\nVOCE DESEJA CREDITAR-(C) OU DEBITAR-(D) UM VALOR? ");
 					opcao = leia.next().toUpperCase().charAt(0);
-					
-					if (opcao == 'C')
-					{
-						System.out.print("\nQUAL O VALOR PARA CRÉDITO ?");
+
+					if (opcao == 'C') {
+						System.out.print("\nQUAL O VALOR PARA CRÉDITO? ");
 						valor = leia.nextDouble();
 						cem1.creditar(valor);
 					}
-					
-				if (opcao == 'D')
-				{
-					if (cem1.getSaldo() <= 0)
-					{
-						System.out.println("\nCONTA SEM SALDO");
-						x--;
-			
-					}						
-					else
-					{
-						System.out.println("QUAL O VALOR PARA DÉBITO ?");
-						valor = leia.nextDouble();
-								
-						while (valor > cem1.getSaldo())
-						{
-							System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE");
-							System.out.println("QUAL O VALOR PARA DÉBITO ?");
+
+					if (opcao == 'D') {
+						if (cem1.getSaldo() <= 0) {
+							System.out.println("\nCONTA SEM SALDO ");
+							x--;
+
+						} else {
+							System.out.println("QUAL O VALOR PARA DÉBITO? ");
 							valor = leia.nextDouble();
+ 
+							while (valor > cem1.getSaldo()) {
+								System.out.println("\nVALOR ACIMA DO SALDO, DIGITE NOVAMENTE ");
+								System.out.println("QUAL O VALOR PARA DÉBITO ?");
+								valor = leia.nextDouble();
+							}
+							cem1.debitar(valor);
 						}
-						cem1.debitar(valor);
 					}
+
 				}
-					
+
+				System.out.printf("\nSALDO DA CONTA: R$ %.2f ", cem1.getSaldo());
+				System.out.println("\nTRANSAÇÃO FINALIZADA\n ");
 			}
-								
-				System.out.printf("\nSALDO DA CONTA: R$ %.2f",cem1.getSaldo());
-				System.out.println("\nTRANSAÇÃO FINALIZADA\n");
-			}
-			
-			System.out.println("\nDESEJA CONTINUAR COM OUTRO USUÁRIO S/N ?");
+
+			System.out.println("\nDESEJA CONTINUAR COM OUTRO USUÁRIO S/N? ");
 			continua = leia.next().toUpperCase().charAt(0);
-			
-			if (continua == 'S')
-			{
+
+			if (continua == 'S') {
 				user = true;
-			}
-			else
-			{
+			} else {
 				user = false;
-				
-				System.out.println("\nPROGRAMA FINALIZADO");
+
+				System.out.println("\nObrigado por usar nossos Serviços");
 			}
-	}			
+		}
+	}
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-package Aplicacao;
+package aplicacoesComObjetosEmEntidades;
 
 import Entidades.Aviao;
 import Entidades.Cliente;
@@ -6,9 +6,9 @@ import Entidades.ContaBancaria;
 import Entidades.Funcionario;
 import Entidades.Paciente;
 import Entidades.Patinete;
-import Entidades.Produto;
+import Entidades.ProdutoVenda;
 
-public class RodandoClassesLista1POO {
+public class InstanciandoObjetosDeEntidades {
 
 	public static void main(String[] args) {
 
@@ -20,8 +20,8 @@ public class RodandoClassesLista1POO {
 		System.out.println(voador.modelo + "\n" + voador.tamanho + "\n" + voador.numeroViagensRealizadas);
 		System.out.println("----------------------------------------------------------------------");
 
-		Produto grampeador = new Produto("Grampeador", "Unidade", 5 ,15.85);
-		System.out.println(grampeador.nome + "\n" + grampeador.medida + "\n" + grampeador.valorUnitario);
+		ProdutoVenda grampeador = new ProdutoVenda("Grampeador", "Unidade", 5 ,15.85);
+		System.out.println(grampeador.getNome() + "\n" + grampeador.getMedida() + "\n" + grampeador.getValorUnitario());
 		System.out.println("----------------------------------------------------------------------");
 		
 		Funcionario programador = new Funcionario("Jorge", "Programador", 3.800, "PGM-23");

@@ -1,4 +1,4 @@
-package ecommerce;
+package Entidades;
 
 public class Venda extends Produto {
 	private String tipo;

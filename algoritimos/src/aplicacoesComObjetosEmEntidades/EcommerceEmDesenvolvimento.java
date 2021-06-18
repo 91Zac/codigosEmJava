@@ -1,7 +1,7 @@
-package ecommerce;
+package aplicacoesComObjetosEmEntidades;
 import java.util.Scanner;
 
-public class desafio {
+public class EcommerceEmDesenvolvimento {
 
 	public static void main(String[] args) {
 		/*

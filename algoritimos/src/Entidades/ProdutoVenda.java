@@ -1,17 +1,19 @@
-package ecommerce;
+package Entidades;
 
-public class Produto {
+public class ProdutoVenda {
 	private String  nome;
 	private String medida;
 	private double valorUnitario;
 	private int estoque;
 	private int codigo;
 	private int qtde;
-	public Produto(String nome, double valorUnitario, int qtde) {
+	public ProdutoVenda(String nome, String medida,int qtde, double valorUnitario) {
 		super();
 		this.nome = nome;
-		this.valorUnitario = valorUnitario;
+		this.medida = medida;
 		this.qtde = qtde;
+		this.valorUnitario = valorUnitario;
+		
 	}
 	public String getNome() {
 		return nome;
